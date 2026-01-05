@@ -32,11 +32,14 @@ body {
   background-image: url('pattern.png');
   background-repeat: repeat;
   background-size: 260px;
+
+  position: relative;     /* ← ДОБАВЛЯЕМ */
+  min-height: 100vh;      /* ← ДОБАВЛЯЕМ */
 }
 
 body::before {
   content: "";
-  position: fixed;
+  position: absolute;
   inset: 0;
   background: rgba(225, 190, 192, 0.85);
   pointer-events: none;
@@ -104,7 +107,13 @@ p {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.75);
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.85),
+      rgba(255,255,255,0.65)
+    );
+  pointer-events: none;
 }
 
 .hero-inner {
@@ -288,7 +297,84 @@ p {
   .name { font-size: 36px; }
   section { padding: 48px 12px; }
 }
+/* ================= TITLE DIVIDERS ================= */
 
+h2,
+.location-title {
+  position: relative;
+  padding-top: 20px;
+}
+
+h2::before,
+.location-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 2px;
+  background: var(--accent);
+  opacity: 0.9;
+}
+/* ================= RSVP BUTTON ================= */
+
+.rsvp-button {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 14px 32px;
+
+  background: rgba(255,255,255,0.85);
+  border: 2px solid var(--accent);
+  border-radius: 32px;
+
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-size: 12px;
+  text-transform: uppercase;
+
+  transition: all 0.3s ease;
+}
+
+.rsvp-button:hover {
+  background: var(--accent);
+  color: #fff;
+}
+  /* ================= VIDEO — DESKTOP FIX ================= */
+@media (min-width: 768px) {
+  .video-section {
+    width: auto;
+    margin-left: 0;
+    padding: 48px 16px;
+  }
+
+  .video-wrapper {
+    max-width: 720px;
+    height: 420px;
+    margin: 0 auto;
+  }
+}
+/* ================= HERO TEXT FIX (DESKTOP) ================= */
+@media (min-width: 768px) {
+  .hero-inner {
+    max-width: 520px;   /* ← ключевая правка */
+    margin: 0 auto;
+  }
+
+  .hero .small {
+    letter-spacing: 3px;
+  }
+
+  .hero .names {
+    margin: 24px 0;
+  }
+
+  .hero p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 </style>
 </head>
