@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Свадебное приглашение</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ================= ПАЛИТРА ================= */
+:root {
+  --pink-main: #e4888e;
+  --pink-dusty: #e1bec0;
+  --white: #ffffff;
+  --red: #7c2421;
+  --green: #234747;
+  --brown: #2c2114;
+
+  --bg-main: var(--pink-dusty);
+  --frame-bg: #fbf6f0;
+  --accent: var(--red);
+  --text-main: var(--brown);
+}
+
+/* ================= БАЗА ================= */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+section {
+  padding: 64px 16px;
+  text-align: center;
+}
+
+.frame {
+  max-width: 960px;
+  margin: auto;
+  background: var(--frame-bg);
+  border: 3px double var(--accent);
+  padding: 48px 24px;
+}
+
+/* ================= ТИПОГРАФИКА ================= */
+h2 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+p {
+  max-width: 620px;
+  margin: 16px auto;
+  line-height: 1.7;
+}
+
+.small {
+  font-size: 11px;
+  letter-spacing: 2px;
+  opacity: 0.75;
+  text-transform: uppercase;
+}
+
+/* ================= ДЕКОР ================= */
+.ornament {
+  font-size: 22px;
+  opacity: 0.6;
+  margin: 12px 0;
+}
+
+.divider {
+  width: 96px;
+  height: 2px;
+  background: var(--accent);
+  margin: 24px auto;
+}
+
+/* ================= HERO / ИМЕНА ================= */
+.names {
+  margin: 32px 0;
+}
+
+.name {
+  font-size: 44px;
+  letter-spacing: 6px;
+}
+
+.amp {
+  font-size: 20px;
+  margin: 10px 0;
+  opacity: 0.7;
+}
+
+.date-big {
+  font-size: 16px;
+  letter-spacing: 4px;
+}
+
+/* ================= АРОЧНЫЕ РАМКИ ================= */
+.arch {
+  position: relative;
+  overflow: hidden;
+  border: 3px solid var(--accent);
+  border-radius: 220px 220px 24px 24px;
+  padding: 10px;
+  background: var(--frame-bg);
+  display: inline-block;
+}
+
+.arch img {
+  width: 100%;
+  max-width: 420px;
+  display: block;
+  border-radius: 200px 200px 16px 16px;
+}
+
+/* ================= КАРТОЧКИ ================= */
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+.card {
+  border: 2px solid var(--accent);
+  padding: 24px;
+  width: 220px;
+  background: var(--frame-bg);
+}
+
+/* ================= DRESS CODE ================= */
+.dress-colors {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin: 32px 0;
+}
+
+.color-item {
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.color-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  margin: 0 auto 6px;
+}
+
+.dc-pink { background: #e4888e; }
+.dc-dusty { background: #e1bec0; }
+.dc-white { background: #ffffff; }
+.dc-red { background: #7c2421; }
+.dc-green { background: #234747; }
+
+/* ================= ФОН С ОТЕЛЕМ ================= */
+.bg-villa {
+  background:
+    linear-gradient(rgba(225,190,192,0.9), rgba(225,190,192,0.9)),
+    url('villa.jpeg') center / cover no-repeat;
+}
+
+/* ================= КНОПКА ================= */
+button {
+  background: none;
+  border: 2px solid var(--accent);
+  padding: 14px 32px;
+  letter-spacing: 3px;
+  cursor: pointer;
+  color: var(--accent);
+}
+
+/* ================= МОБИЛКА ================= */
+@media (max-width: 480px) {
+  section {
+    padding: 48px 14px;
+  }
+
+  .frame {
+    padding: 40px 18px;
+  }
+
+  .name {
+    font-size: 36px;
+  }
+
+  .arch img {
+    max-width: 320px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section>
+  <div class="frame">
+    <div class="ornament">❦</div>
+    <p class="small">Grand Budapest Hotel</p>
+
+    <div class="names">
+      <div class="name">МАСИМ</div>
+      <div class="amp">&</div>
+      <div class="name">ЕСЯ</div>
+    </div>
+
+    <div class="divider"></div>
+    <p class="date-big">18 · 04 · 26</p>
+
+    <p>Вилла София<br>г. Волгоград</p>
+    <p class="small">🔑 Room 212 • Established 2026</p>
+  </div>
+</section>
+
+<!-- ПРИВЕТСТВИЕ -->
+<section>
+  <div class="frame">
+    <h2>Личное сообщение</h2>
+
+    <div class="arch">
+      <img src="couple.jpeg" alt="Мы">
+    </div>
+
+    <p id="guest-name">Дорогой гость,</p>
+
+    <p>
+      Мы с радостью приглашаем вас
+      разделить с нами день,
+      который станет началом
+      новой истории.
+    </p>
+
+    <p id="room-number" class="small"></p>
+    <div class="ornament">✦ ✦ ✦</div>
+  </div>
+</section>
+
+<!-- ДЕТАЛИ -->
+<section>
+  <div class="frame">
+    <h2>Информация о пребывании</h2>
+
+    <div class="cards">
+      <div class="card">
+        <p class="small">Дата</p>
+        <p>18 апреля 2026</p>
+      </div>
+      <div class="card">
+        <p class="small">Место</p>
+        <p>Вилла София<br>Волгоград</p>
+      </div>
+      <div class="card">
+        <p class="small">Заезд</p>
+        <p>Будет сообщено дополнительно</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DRESS CODE -->
+<section>
+  <div class="frame">
+    <h2>Дресс-код</h2>
+    <p class="small">Рекомендация от консьержа</p>
+
+    <div class="dress-colors">
+      <div class="color-item"><div class="color-circle dc-pink"></div>Розовый</div>
+      <div class="color-item"><div class="color-circle dc-dusty"></div>Пыльно-розовый</div>
+      <div class="color-item"><div class="color-circle dc-white"></div>Белый</div>
+      <div class="color-item"><div class="color-circle dc-red"></div>Красный</div>
+      <div class="color-item"><div class="color-circle dc-green"></div>Зелёный</div>
+    </div>
+
+    <p>Будем рады, если вы поддержите атмосферу вечера.</p>
+    <div class="ornament">❖</div>
+  </div>
+</section>
+
+<!-- ЛОКАЦИЯ (ФОН + ФОТО В РАМКЕ) -->
+<section class="bg-villa">
+  <div class="frame">
+    <h2>Локация</h2>
+
+    <div class="arch">
+      <img src="villa.jpeg" alt="Вилла София">
+    </div>
+
+    <p class="small">Villa Sofia · Volgograd</p>
+    <div class="ornament">❦</div>
+  </div>
+</section>
+
+<!-- RSVP -->
+<section>
+  <div class="frame">
+    <h2>Книга гостей</h2>
+
+    <p>
+      Пожалуйста, подтвердите ваше присутствие,
+      чтобы мы могли подготовить всё к вашему прибытию.
+    </p>
+
+    <button>ПОДТВЕРДИТЬ УЧАСТИЕ</button>
+    <div class="ornament">❧</div>
+    <p class="small">Room service is a privilege</p>
+  </div>
+</section>
+
+<!-- ПЕРСОНАЛИЗАЦИЯ -->
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const guest = params.get('guest');
+  const room = params.get('room');
+
+  if (guest) {
+    document.getElementById('guest-name').innerText = `Дорогие ${guest},`;
+  }
+  if (room) {
+    document.getElementById('room-number').innerText = `🔑 Room ${room} • Grand Budapest Hotel`;
+  }
+</script>
+
+</body>
+</html>
