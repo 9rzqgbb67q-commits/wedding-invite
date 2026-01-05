@@ -60,12 +60,24 @@ section {
 }
 
 /* ================= ТИПОГРАФИКА ================= */
-h2 {
-  font-size: 26px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
+h2,
+.location-title {
+  position: relative;
+  padding-bottom: 18px; /* было 20px — чуть компактнее */
   margin-bottom: 16px;
-  font-weight: 600;
+}
+
+h2::after,
+.location-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 2px;
+  background: var(--accent);
+  opacity: 0.9;
 }
 
 p {
@@ -107,6 +119,7 @@ p {
   padding-top: 40px;
   padding-bottom: 24px;
   background: url('grand-budapest.jpg') center top / cover no-repeat;
+  filter: saturate(1.05) contrast(1.05);
 }
 
 .hero::before {
@@ -115,13 +128,13 @@ p {
   inset: 0;
   background: radial-gradient(
     ellipse at center,
-    rgba(255,255,255,0.35) 0%,
-    rgba(255,255,255,0.55) 45%,
-    rgba(255,255,255,0.78) 100%
+    rgba(255,255,255,0.22) 0%,
+    rgba(255,255,255,0.45) 40%,
+    rgba(255,255,255,0.75) 100%
   );
   pointer-events: none;
 }
-
+  
 .hero-inner {
   position: relative;
   padding: 32px 24px 24px;
@@ -213,8 +226,7 @@ p {
 .location-title {
   font-size: 32px;
   letter-spacing: 4px;
-  margin: 16px 0 8px;
-  font-weight: 600;
+  margin-top: 16px;
 }
 
 .address {
@@ -496,8 +508,7 @@ h2::after,
 <!-- ЛОКАЦИЯ -->
 <section class="bg-villa">
   <div class="inner">
-
-    <div class="arch">
+ <div class="arch">
       <img src="villa.jpeg" alt="Вилла София">
     </div>
 
