@@ -412,18 +412,14 @@ h2::after,
     background: url('grand-budapest.jpg') center top / cover no-repeat;
   }
 
-/*.hero-group::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.6),
-    rgba(255,255,255,0.78)
-  );
-  pointer-events: none;
-} */
-
+  /* ЕДИНАЯ ЛЁГКАЯ ВУАЛЬ НА ВСЮ СЦЕНУ */
+  .hero-group::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(225, 190, 192, 0.18); /* dusty pink, очень мягко */
+    pointer-events: none;
+  }
 
   .hero,
   .video-section {
@@ -431,17 +427,17 @@ h2::after,
     position: relative;
     z-index: 1;
   }
-}
-@media (min-width: 768px) {
+
   .video-wrapper {
     height: 360px;
   }
 
   .video-section {
-  padding-top: 24px;
-  margin-top: 0;
+    padding-top: 24px;
+    margin-top: 0;
+  }
 }
-}
+
 /* ================= HERO BACKGROUND — DESKTOP OFF ================= */
 @media (min-width: 768px) {
   .hero {
