@@ -100,19 +100,19 @@ p {
   position: relative;
   padding-top: 40px;
   padding-bottom: 24px;
-  background: url('grand-budapest.jpg') center / cover no-repeat;
+  background: url('grand-budapest.jpg') center top / cover no-repeat;
 }
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.85),
-      rgba(255,255,255,0.65)
-    );
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255,255,255,0.35) 0%,
+    rgba(255,255,255,0.55) 45%,
+    rgba(255,255,255,0.78) 100%
+  );
   pointer-events: none;
 }
 
@@ -126,6 +126,7 @@ p {
 .hero .names { margin: 20px 0; }
 .hero .divider { margin: 16px auto; }
 .hero .date-big { margin: 12px 0; }
+  
 
 /* ================= АРКИ ================= */
 .arch {
@@ -302,14 +303,20 @@ p {
 h2,
 .location-title {
   position: relative;
-  padding-top: 20px;
+  padding-top: 0;
+  padding-bottom: 20px;
 }
 
 h2::before,
 .location-title::before {
+  content: none;
+}
+
+h2::after,
+.location-title::after {
   content: "";
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 72px;
@@ -317,6 +324,7 @@ h2::before,
   background: var(--accent);
   opacity: 0.9;
 }
+
 /* ================= RSVP BUTTON ================= */
 
 .rsvp-button {
@@ -480,8 +488,6 @@ h2::before,
       <img src="villa.jpeg" alt="Вилла София">
     </div>
 
-    <div class="divider"></div>
-
     <div class="location-title">Villa Sofia</div>
 
     <div class="address">
@@ -596,6 +602,22 @@ function toggleSound() {
     button.textContent = '🔊';
   }
 }
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.getElementById('heroVideo');
+
+  if (video) {
+    video.muted = true;
+    const playPromise = video.play();
+
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // iOS Safari — молча игнорируем
+      });
+    }
+  }
+});
 </script>
 
 </body>
