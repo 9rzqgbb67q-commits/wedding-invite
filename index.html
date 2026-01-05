@@ -402,12 +402,48 @@ h2::after,
     margin-right: auto;
   }
 }
+/* ================= HERO + VIDEO GROUP (DESKTOP) ================= */
+@media (min-width: 768px) {
+  .hero-group {
+    position: relative;
+    background: url('grand-budapest.jpg') center top / cover no-repeat;
+  }
+
+  .hero-group::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.75),
+      rgba(255,255,255,0.9)
+    );
+    pointer-events: none;
+  }
+
+  .hero,
+  .video-section {
+    background: transparent;
+    position: relative;
+    z-index: 1;
+  }
+}
+@media (min-width: 768px) {
+  .video-wrapper {
+    height: 360px;
+  }
+
+  .video-section {
+    padding-top: 0;
+    margin-top: -24px;
+  }
+}
 
 </style>
 </head>
 
 <body>
-
+<div class="hero-group">
 <!-- HERO -->
 <section class="hero">
   <div class="inner hero-inner">
@@ -455,7 +491,7 @@ h2::after,
 </div>
 
 </section>
-
+</div>
 
 <!-- ПРИВЕТСТВИЕ -->
 <section>
