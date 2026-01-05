@@ -81,24 +81,25 @@ p {
 }
 
 /* ================= HERO ================= */
-.names {
-  margin: 32px 0;
+.hero .ornament {
+  margin-bottom: 6px;
 }
 
-.name {
-  font-size: 44px;
-  letter-spacing: 6px;
+.hero .small {
+  margin-top: 0;
+  margin-bottom: 12px;
 }
 
-.amp {
-  font-size: 20px;
-  margin: 8px 0;
-  opacity: 0.7;
+.hero .names {
+  margin: 20px 0;
 }
 
-.date-big {
-  font-size: 16px;
-  letter-spacing: 4px;
+.hero .divider {
+  margin: 16px auto;
+}
+
+.hero .date-big {
+  margin: 12px 0;
 }
 
 /* ================= АРКИ ================= */
@@ -348,6 +349,16 @@ section .arch {
   font-size: 14px;
   line-height: 1.6;
 }
+/* ================= HERO COMPACT ================= */
+
+.hero {
+  padding-top: 40px;
+  padding-bottom: 24px;
+}
+
+.hero-inner {
+  padding: 32px 24px 24px;
+}
 
 </style>
 </head>
@@ -355,8 +366,8 @@ section .arch {
 <body>
 
 <!-- HERO -->
-<section>
-  <div class="inner">
+<section class="hero">
+  <div class="inner hero-inner">
     <div class="ornament">❦</div>
     <p class="small">Villa Sofia Hotel</p>
 
@@ -373,6 +384,7 @@ section .arch {
     <p class="small">Room 212 · Established 2026</p>
   </div>
 </section>
+
 
 <!-- VIDEO -->
 <section class="video-section">
