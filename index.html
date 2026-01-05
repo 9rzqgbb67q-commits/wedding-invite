@@ -80,6 +80,12 @@ p {
   opacity: 0.75;
   text-transform: uppercase;
 }
+  .room-note {
+  margin-top: 6px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  opacity: 0.45;
+}
 
 /* ================= ДЕКОР ================= */
 .ornament {
@@ -405,7 +411,14 @@ h2::after,
     <p class="date-big">18 · 04 · 26</p>
 
     <p>Villa Sofia · Volgograd</p>
-    <p class="small">Room 212 · Established 2026</p>
+    <p id="room-label" class="small">
+  Room 212 · Established 2026
+</p>
+    <p class="room-note small">
+  Отсылка к фильму · не номер размещения
+</p>
+
+
   </div>
 </section>
 
@@ -579,16 +592,53 @@ h2::after,
 
 <script>
 const params = new URLSearchParams(window.location.search);
-const guest = params.get('guest');
-const room = params.get('room');
 
-if (guest) {
-  document.getElementById('guest-name').innerText = `Дорогие ${guest},`;
+const guest = params.get('guest');   // имя / имена
+const room = params.get('room');     // номер комнаты
+const gender = params.get('gender'); // m | f
+
+const guestNameEl = document.getElementById('guest-name');
+const roomLabelEl = document.getElementById('room-label');
+const roomNumberEl = document.getElementById('room-number');
+
+/* ===== Приветствие ===== */
+if (guest && guestNameEl) {
+  const lower = guest.toLowerCase();
+
+  const isMultiple =
+    guest.includes(',') ||
+    guest.includes('&') ||
+    lower.includes(' и ');
+
+  let greeting;
+
+  if (isMultiple) {
+    greeting = 'Дорогие';
+  } else if (gender === 'f') {
+    greeting = 'Дорогая';
+  } else if (gender === 'm') {
+    greeting = 'Дорогой';
+  } else {
+    greeting = 'Дорогой'; // безопасный fallback
+  }
+
+  guestNameEl.innerText = `${greeting} ${guest},`;
 }
+
+/* ===== Номер комнаты ===== */
 if (room) {
-  document.getElementById('room-number').innerText = `Room ${room} · Grand Budapest Hotel`;
+  const roomText = `Room ${room} · Grand Budapest Hotel`;
+
+  if (roomLabelEl) {
+    roomLabelEl.innerText = roomText;
+  }
+
+  if (roomNumberEl) {
+    roomNumberEl.innerText = roomText;
+  }
 }
 </script>
+
 <script>
 function toggleSound() {
   const video = document.getElementById('heroVideo');
