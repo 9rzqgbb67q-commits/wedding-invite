@@ -24,12 +24,12 @@
 }
 
 /* ================= БАЗА + ПАТТЕРН ================= */
-body {
+ body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   color: var(--text-main);
   background-color: var(--bg-main);
-  background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%237c2421' stroke-opacity='0.08' stroke-width='1'%3E%3Cpath d='M60 10c-10 0-18 8-18 16s8 12 18 12 18-4 18-12-8-16-18-16z'/%3E%3Cpath d='M60 110c10 0 18-8 18-16s-8-12-18-12-18 4-18 12 8 16 18 16z'/%3E%3Cpath d='M10 60c0-10 8-18 16-18s12 8 12 18-4 18-12 18-16-8-16-18z'/%3E%3Cpath d='M110 60c0 10-8 18-16 18s-12-8-12-18 4-18 12-18 16 8 16 18z'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%237c2421' stroke-opacity='0.12' stroke-width='1'%3E%3Cpath d='M90 12c-18 0-28 14-28 26 0 10 8 16 16 18-6 6-12 12-12 22 0 16 14 26 24 26s24-10 24-26c0-10-6-16-12-22 8-2 16-8 16-18 0-12-10-26-28-26z'/%3E%3Cpath d='M90 168c18 0 28-14 28-26 0-10-8-16-16-18 6-6 12-12 12-22 0-16-14-26-24-26s-24 10-24 26c0 10 6 16 12 22-8 2-16 8-16 18 0 12 10 26 28 26z'/%3E%3Cpath d='M12 90c0-18 14-28 26-28 10 0 16 8 18 16 6-6 12-12 22-12 16 0 26 14 26 24s-10 24-26 24c-10 0-16-6-22-12-2 8-8 16-18 16-12 0-26-10-26-28z'/%3E%3Cpath d='M168 90c0 18-14 28-26 28-10 0-16-8-18-16-6 6-12 12-22 12-16 0-26-14-26-24s10-24 26-24c10 0 16 6 22 12 2-8 8-16 18-16 12 0 26 10 26 28z'/%3E%3Cpath d='M45 45c8 8 18 8 22 4s4-14-4-22-18-8-22-4-4 14 4 22z'/%3E%3Cpath d='M135 45c-8 8-18 8-22 4s-4-14 4-22 18-8 22-4 4 14-4 22z'/%3E%3Cpath d='M45 135c8-8 18-8 22-4s4 14-4 22-18 8-22 4-4-14 4-22z'/%3E%3Cpath d='M135 135c-8-8-18-8-22-4s-4 14 4 22 18 8 22 4 4-14-4-22z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* ================= СЕКЦИИ ================= */
@@ -150,11 +150,11 @@ p {
   border-radius: 50%;
 }
 
-.dc-pink { background:#e4888e; }
-.dc-dusty { background:#e1bec0; }
+.dc-pink { background:#fbd4db; }
+.dc-dusty { background:#aeb078; }
 .dc-white { background:#ffffff; }
-.dc-red { background:#7c2421; }
-.dc-green { background:#234747; }
+.dc-red { background:#801D21; }
+.dc-green { background:#714e47; }
 
 /* ================= ЛОКАЦИЯ ================= */
 .bg-villa {
@@ -167,6 +167,7 @@ p {
   font-size: 32px;
   letter-spacing: 4px;
   margin: 16px 0 8px;
+  font-weight: 600;
 }
 
 .address {
@@ -302,6 +303,51 @@ section .arch {
   font-size: 24px;
   margin-bottom: 8px;
 }
+/* ================= TRANSFER ================= */
+
+.transfer-box {
+  margin: 32px auto 0;
+  padding: 18px 20px;
+  max-width: 520px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 18px;
+}
+
+.transfer-title {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 8px;
+}
+
+.transfer-text {
+  font-size: 14px;
+  line-height: 1.6;
+}
+/* ================= REGISTRY ================= */
+
+.registry-frame img {
+  filter: grayscale(100%);
+}
+
+.registry-text {
+  margin-top: 24px;
+}
+
+.registry-main {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.registry-note {
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+}
 
 </style>
 </head>
@@ -318,7 +364,6 @@ section .arch {
       <div class="name">МАСИМ</div>
       <div class="amp">&</div>
       <div class="name">ЛЕСЯ</div>
-      <div class="name">ЕПИФАНОВЫ</div>
     </div>
 
     <div class="divider"></div>
@@ -402,13 +447,14 @@ section .arch {
 <!-- ЛОКАЦИЯ -->
 <section class="bg-villa">
   <div class="inner">
+
     <div class="arch">
       <img src="villa.jpeg" alt="Вилла София">
     </div>
 
     <div class="divider"></div>
 
-    <div class="location-title">Villa Sofia/div>
+    <div class="location-title">Villa Sofia</div>
 
     <div class="address">
       ул. Озёрная, стр. 1<br>
@@ -416,16 +462,18 @@ section .arch {
       Волгоградская область
     </div>
 
-    <div class="ornament">❦</div>
-    <div class="divider"></div>
+    <!-- ТРАНСФЕР -->
+    <div class="transfer-box">
+      <div class="transfer-title">Трансфер</div>
+      <div class="transfer-text">
+        До площадки гости добираются самостоятельно.<br>
+        После завершения вечера будет организован трансфер обратно.
+      </div>
+    </div>
 
-    <p class="small">Трансфер</p>
-    <div class="address">
-      До площадки гости добираются самостоятельно.<br>
-      После завершения вечера будет организован трансфер обратно.
-   </div>
   </div>
 </section>
+
 
   <!-- DRESS CODE -->
 <section>
@@ -446,26 +494,31 @@ section .arch {
   </div>
 </section>
 
-  <!-- РЕГИСТРАЦИЯ -->
+ <!-- РЕГИСТРАЦИЯ -->
 <section>
   <div class="inner">
+
     <h2>О регистрации</h2>
 
-    <div class="soft-frame">
+    <div class="soft-frame registry-frame">
       <img src="registry.jpeg" alt="ЗАГС №1, Волжский">
     </div>
 
-    <p class="small">
-      Официальная регистрация брака пройдет в г. Волжский<br>
-      ЗАГС №1, ул. Чайковского, 17А
-    </p>
+    <div class="registry-text">
+      <div class="registry-main">
+        Официальная регистрация брака пройдет в г. Волжский<br>
+        ЗАГС №1, ул. Чайковского, 17А
+      </div>
 
-    <p>
-      Присутствие на регистрации опционально —<br>
-      мы будем рады видеть вас на праздновании в Вилле София.
-    </p>
+      <div class="registry-note">
+        Присутствие на регистрации опционально —<br>
+        мы будем рады видеть вас на праздновании в Вилле София.
+      </div>
+    </div>
+
   </div>
 </section>
+
 
 <!-- RSVP -->
 <section>
