@@ -580,9 +580,6 @@ h2::after,
 }
 /* ================= RECEPTION ================= */
 
-
-
-
 /* CONTENT */
 .reception-content {
   text-align: center;
@@ -608,6 +605,34 @@ h2::after,
 
 .reception-links a:hover {
   opacity: 0.65;
+}
+/* ================= SCROLL ANIMATION ================= */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Чуть мягче для вложенных элементов */
+.fade-up-soft {
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.fade-up-soft.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 
@@ -707,7 +732,7 @@ h2::after,
   <div id="invitation" class="inner">
     <h2>Личное сообщение</h2>
 
-    <div class="arch">
+    <div class="arch fade-up-soft">
       <img src="couple.jpeg" alt="">
     </div>
 
@@ -733,7 +758,7 @@ h2::after,
 
 
 <!-- ИНФОРМАЦИЯ -->
-<section id="program" >
+<section id="program" class="fade-up">
   <div class="inner inner-compact">
     <h2>Информация о пребывании</h2>
 
@@ -774,9 +799,9 @@ h2::after,
 
 
 <!-- ЛОКАЦИЯ -->
-<section id="location" class="bg-villa">
+<section id="location" class="fade-up" >
   <div class="inner">
- <div class="arch">
+ <div class="arch fade-up-soft">
       <img src="villa.jpeg" alt="Вилла София">
     </div>
 
@@ -789,7 +814,7 @@ h2::after,
     </div>
 
     <!-- ТРАНСФЕР -->
-    <div class="transfer-box">
+    <div class="transfer-box fade-up-soft">
       <div class="transfer-title">Трансфер</div>
       <div class="transfer-text">
         До площадки гости добираются самостоятельно.<br>
@@ -849,7 +874,7 @@ h2::after,
 
 
 <!-- RSVP -->
-<section id="rsvp" >
+<section id="rsvp" class="fade-up">
   <div class="inner">
     <h2>Книга гостей</h2>
 
@@ -872,11 +897,11 @@ h2::after,
 </section>
   
     <!--РЕСЕПШЕН -->  
-<section id="reception">
+<section id="reception" class="fade-up">  
   <div class="inner">
 
     <!-- PHOTO -->
-    <div class="arch">
+    <div class="arch fade-up-soft">
       <img src="reception_1-oval.jpeg" alt="Couple_reception">
     </div>
 
@@ -1172,5 +1197,28 @@ window.addEventListener('load', () => {
   window.scrollTo(0, 0);
 });
 </script>
+
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const items = document.querySelectorAll('.fade-up, .fade-up-soft');
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.15
+    }
+  );
+
+  items.forEach(el => observer.observe(el));
+});
+</script>
+
 </body>
 </html>
