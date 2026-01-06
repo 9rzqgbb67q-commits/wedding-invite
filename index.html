@@ -578,56 +578,52 @@ h2::after,
     display: inline;
   }
 }
-  /* ================= RECEPTION DESK ================= */
+/* ================= RECEPTION ================= */
 
-#reception {
-  padding: 96px 16px 120px;
+.reception-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 48px;
+  align-items: center;
 }
 
-.reception-wrap {
+/* PHOTO */
+.reception-photo-wrap {
   display: flex;
   justify-content: center;
 }
 
-.reception-oval {
-  max-width: 540px;
-  width: 100%;
-  padding: 48px 36px 40px;
+.reception-photo-frame {
+  width: 220px;
+  height: 300px;
 
-  background: rgba(251,246,240,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
   border-radius: 50% / 18%;
-
-  text-align: center;
-
-  box-shadow:
-    0 24px 48px rgba(0,0,0,0.18),
-    inset 0 0 0 1px rgba(124,36,33,0.15);
+  box-shadow: inset 0 0 0 1px rgba(124,36,33,0.25);
 }
 
-/* Фото */
-.reception-photo {
+.reception-photo-frame img {
+  width: 160px;
   display: block;
-  width: 180px;
-  max-width: 70%;
-  margin: -12px auto 20px;
 }
 
-/* Заголовок — линия под ним появится автоматически */
-.reception-oval h2 {
-  margin-bottom: 18px;
+/* CONTENT */
+.reception-content {
+  text-align: center;
 }
 
-/* Меню ссылок */
-.reception-menu {
-  margin-top: 28px;
-  margin-bottom: 24px;
-
+.reception-links {
+  margin: 28px 0;
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-.reception-menu a {
+.reception-links a {
   text-decoration: none;
   color: var(--accent);
 
@@ -638,23 +634,28 @@ h2::after,
   transition: opacity 0.25s ease;
 }
 
-.reception-menu a:hover {
+.reception-links a:hover {
   opacity: 0.65;
 }
 
 /* ================= MOBILE ================= */
 
-@media (max-width: 480px) {
-  .reception-oval {
-    padding: 40px 24px 36px;
-    border-radius: 48% / 20%;
+@media (max-width: 768px) {
+  .reception-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 
-  .reception-photo {
-    width: 150px;
-    margin-bottom: 16px;
+  .reception-photo-frame {
+    width: 200px;
+    height: 260px;
+  }
+
+  .reception-photo-frame img {
+    width: 140px;
   }
 }
+
 
 
 </style>
@@ -916,35 +917,39 @@ h2::after,
 </section>
   
 <!-- RECEPTION DESK -->
+<!-- ================= RECEPTION ================= -->
 <section id="reception">
-  <div class="reception-wrap">
+  <div class="inner">
 
-    <div class="reception-oval">
+    <div class="reception-layout">
 
-      <img
-        src="reception.png"
-        alt="Reception Desk"
-        class="reception-photo"
-      >
- 
-      <h2>Ресепшн</h2>
-      <p class="small">At your service</p>
+      <!-- LEFT: PHOTO -->
+      <div class="reception-photo-wrap">
+        <div class="reception-photo-frame">
+          <img src="reception_1-oval.png" alt="Reception Desk">
+        </div>
+      </div>
 
-      <nav class="reception-menu">
-        <a href="https://t.me/mnrvll" target="_blank">
-          Bride Concierge · Telegram
-        </a>
-        <a href="https://t.me/houd1n" target="_blank">
-          Groom Concierge · Telegram
-        </a>
-        <a href="https://t.me/+_nXl16axKu80Njc6" target="_blank">
-          Масим&Еся · Telegram
-        </a>
-      </nav>
+      <!-- RIGHT: CONTENT -->
+      <div class="reception-content">
+        <h2>Ресепшн</h2>
+        <p class="small">AT YOUR SERVICE</p>
 
-      <div class="ornament">❧</div>
+        <div class="reception-links">
+          <a href="https://t.me/mnrvll" target="_blank">
+            Bride Concierge · Telegram
+          </a>
+          <a href="https://t.me/houd1n" target="_blank">
+            Groom Concierge · Telegram
+          </a>
+          <a href="https://t.me/+_nXl16axKu80Njc6" target="_blank">
+            Максим & Леся · Telegram
+          </a>
+        </div>
 
-      <p class="small">Room service is always available</p>
+        <div class="ornament">❧</div>
+        <p class="small">Room service is always available</p>
+      </div>
 
     </div>
 
