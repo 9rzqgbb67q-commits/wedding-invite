@@ -24,23 +24,27 @@
   --text-main: var(--brown);
 }
 
-/* ================= БАЗА + ПАТТЕРН ================= */
-html,
-body {
-  width: 100%;
+/* ================= БАЗА + ПАТТЕРН ================= */ 
+ body {
   margin: 0;
-}
-
-body {
   font-family: 'Montserrat', sans-serif;
   color: var(--text-main);
-
   background-color: var(--pink-dusty);
   background-image: url('pattern.png');
   background-repeat: repeat;
   background-size: 260px;
 
+  position: relative;
   min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(225, 190, 192, 0.85);
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* ================= СЕКЦИИ ================= */
