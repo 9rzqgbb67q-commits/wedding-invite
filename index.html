@@ -318,16 +318,8 @@ p {
 }
 
 .sound-toggle {
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(44,33,20,0.6);
-  color: #fff;
-  font-size: 18px;
+  font-size: 16px;
+  backdrop-filter: blur(4px);
 }
 
 /* ================= МОБИЛКА ================= */
@@ -913,10 +905,10 @@ function toggleSound() {
 
   if (video.muted) {
     video.muted = false;
-    button.textContent = '🔈';
+    button.textContent = '🔕';
   } else {
     video.muted = true;
-    button.textContent = '🔊';
+    button.textContent = '🔕';
   }
 }
 </script>
