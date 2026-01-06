@@ -1050,13 +1050,20 @@ function toggleSound() {
 
   if (video.muted) {
     video.muted = false;
-    button.textContent = '🔕';
+
+    video.play().then(() => {
+      button.textContent = '🔈';
+    }).catch(() => {
+      // iOS Safari может отказать — это нормально
+    });
+
   } else {
     video.muted = true;
-    button.textContent = '🔕';
+    button.textContent = '🔇';
   }
 }
 </script>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const video = document.getElementById('heroVideo');
