@@ -463,7 +463,7 @@ h2::after,
     filter: none;
   }
 }
-  /* ================= HOTEL MENU ================= */
+ /* ================= HOTEL MENU ================= */
 
 .hotel-menu {
   position: fixed;
@@ -500,9 +500,8 @@ h2::after,
 
   padding: 6px 4px;
 }
-
-/* Подсказка */
-.hotel-menu .hint {
+  /* ================= Подсказки ================= */
+  .hotel-menu .hint {
   position: absolute;
   top: 100%;
   left: 50%;
@@ -525,32 +524,36 @@ h2::after,
   opacity: 0.65;
 }
 
-/* Акцент на последнем пункте */
 .hotel-menu .accent a {
   color: var(--accent);
 }
-
-/* Мобильная адаптация */
+.label-short {
+  display: none;
+}
+  /* ================= HOTEL MENU — MOBILE ================= */
 @media (max-width: 640px) {
+
   .hotel-menu {
     top: auto;
     bottom: 12px;
     padding: 10px 14px;
+    max-width: calc(100vw - 24px);
   }
 
   .hotel-menu ul {
-    gap: 14px;
+    gap: 12px;
+    justify-content: space-between;
+  }
+
+  .hotel-menu a {
+    font-size: 11px;
+    letter-spacing: 1.5px;
   }
 
   .hotel-menu .hint {
     display: none;
   }
-}
-  .label-short {
-  display: none;
-}
 
-@media (max-width: 640px) {
   .label-full {
     display: none;
   }
@@ -559,7 +562,6 @@ h2::after,
     display: inline;
   }
 }
-
 
 </style>
 </head>
