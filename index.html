@@ -578,6 +578,84 @@ h2::after,
     display: inline;
   }
 }
+  /* ================= RECEPTION DESK ================= */
+
+#reception {
+  padding: 96px 16px 120px;
+}
+
+.reception-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.reception-oval {
+  max-width: 540px;
+  width: 100%;
+  padding: 48px 36px 40px;
+
+  background: rgba(251,246,240,0.95);
+  border-radius: 50% / 18%;
+
+  text-align: center;
+
+  box-shadow:
+    0 24px 48px rgba(0,0,0,0.18),
+    inset 0 0 0 1px rgba(124,36,33,0.15);
+}
+
+/* Фото */
+.reception-photo {
+  display: block;
+  width: 180px;
+  max-width: 70%;
+  margin: -12px auto 20px;
+}
+
+/* Заголовок — линия под ним появится автоматически */
+.reception-oval h2 {
+  margin-bottom: 18px;
+}
+
+/* Меню ссылок */
+.reception-menu {
+  margin-top: 28px;
+  margin-bottom: 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.reception-menu a {
+  text-decoration: none;
+  color: var(--accent);
+
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  transition: opacity 0.25s ease;
+}
+
+.reception-menu a:hover {
+  opacity: 0.65;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 480px) {
+  .reception-oval {
+    padding: 40px 24px 36px;
+    border-radius: 48% / 20%;
+  }
+
+  .reception-photo {
+    width: 150px;
+    margin-bottom: 16px;
+  }
+}
+
 
 </style>
 </head>
@@ -834,6 +912,42 @@ h2::after,
 
     <div class="ornament">❧</div>
     <p class="small">Room service is a privilege</p>
+  </div>
+</section>
+  
+<!-- RECEPTION DESK -->
+<section id="reception">
+  <div class="reception-wrap">
+
+    <div class="reception-oval">
+
+      <img
+        src="reception.png"
+        alt="Reception Desk"
+        class="reception-photo"
+      >
+
+      <h2>Ресепшн</h2>
+      <p class="small">At your service</p>
+
+      <nav class="reception-menu">
+        <a href="https://t.me/mnrvll" target="_blank">
+          Bride Concierge · Telegram
+        </a>
+        <a href="https://t.me/houd1n" target="_blank">
+          Groom Concierge · Telegram
+        </a>
+        <a href="https://t.me/+_nXl16axKu80Njc6" target="_blank">
+          Масим&Еся · Telegram
+        </a>
+      </nav>
+
+      <div class="ornament">❧</div>
+
+      <p class="small">Room service is always available</p>
+
+    </div>
+
   </div>
 </section>
 
