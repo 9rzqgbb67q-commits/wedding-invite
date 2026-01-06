@@ -546,6 +546,20 @@ h2::after,
     display: none;
   }
 }
+  .label-short {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .label-full {
+    display: none;
+  }
+
+  .label-short {
+    display: inline;
+  }
+}
+
 
 </style>
 </head>
@@ -573,9 +587,10 @@ h2::after,
     </li>
     <li class="accent">
       <a href="#rsvp">
-        Confirm Attendance
-        <span class="hint">Подтвердить присутствие</span>
-      </a>
+  <span class="label-full">Confirm Attendance</span>
+  <span class="label-short">Confirm</span>
+  <span class="hint">Подтвердить присутствие</span>
+</a>
     </li>
   </ul>
 </nav>
@@ -666,7 +681,7 @@ h2::after,
 
 
 <!-- ИНФОРМАЦИЯ -->
-<section> id="program" 
+<section id="program" >
   <div class="inner inner-compact">
     <h2>Информация о пребывании</h2>
 
@@ -782,7 +797,7 @@ h2::after,
 
 
 <!-- RSVP -->
-<section> id="rsvp"
+<section id="rsvp" >
   <div class="inner">
     <h2>Книга гостей</h2>
 
